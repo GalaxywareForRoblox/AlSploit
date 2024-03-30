@@ -723,7 +723,7 @@ end
 local Settings = {}
 local Loaded = false
 
-local SaveFileName = "GodSploitPrivateSaving.lua"
+local SaveFileName = "NebulaPrivateSaving.lua"
 
 local function CreateSettingsFile()
 	local DefaultSetting = {Properties = {Value = false}}
@@ -792,21 +792,21 @@ local function CreateSettingsFile()
 		end
 
 		if writefile and makefolder and readfile and isfile then 
-			makefolder("GodSploitBedwarsConfigSaving")
+			makefolder("NebulaBedwarsConfigSaving")
 
 			local JSONEncodeSettings = HttpService:JSONEncode(Settings)
 
-			writefile("GodSploitBedwarsConfigSaving/" .. SaveFileName, JSONEncodeSettings)
+			writefile("NebulaBedwarsConfigSaving/" .. SaveFileName, JSONEncodeSettings)
 		end
 	end)	
 end
 
 local function CheckFirstTime()
-	if isfile("GodSploitBedwarsConfigSaving/" .. SaveFileName) then
+	if isfile("NebulaBedwarsConfigSaving/" .. SaveFileName) then
 		return false
 	end
 
-	if not isfile("GodSploitBedwarsConfigSaving/" .. SaveFileName) then
+	if not isfile("NebulaBedwarsConfigSaving/" .. SaveFileName) then
 		return true
 	end
 end
@@ -814,12 +814,12 @@ end
 local function SaveSettings()	
 	local JSONEncodeSettings = HttpService:JSONEncode(Settings)
 
-	writefile("GodSploitBedwarsConfigSaving/" .. SaveFileName, JSONEncodeSettings)	
+	writefile("NebulaBedwarsConfigSaving/" .. SaveFileName, JSONEncodeSettings)	
 end
 
 local function LoadSettings()
-	if isfile("GodSploitBedwarsConfigSaving/" .. SaveFileName) then
-		Settings = HttpService:JSONDecode(readfile("GodSploitBedwarsConfigSaving/" .. SaveFileName))
+	if isfile("NebulaBedwarsConfigSaving/" .. SaveFileName) then
+		Settings = HttpService:JSONDecode(readfile("NebulaBedwarsConfigSaving/" .. SaveFileName))
 
 		Loaded = true
 	end
@@ -869,7 +869,7 @@ end)
 
 task.spawn(function()
 	if not KnitClientGotten then
-		CreateNotification(10, "Your executor will not support alot features.")
+		CreateNotification(10, "your executor is shit.")
 	end
 end)
 
@@ -1588,27 +1588,27 @@ local function AutoToxic(Player)
 	local KillMessage = ""					
 
 	if Randomized == 0 then
-		KillMessage = "You are so bad u died. L" .. Player.Name .. " | GodSploit on top"
+		KillMessage = "You are so bad u died. L" .. Player.Name .. " | Nebula on top"
 	end
 
 	if Randomized ~= 0 then
-		KillMessage = "I could probably win without cheats. L" .. Player.Name .. " | GodSploit on top"
+		KillMessage = "I could probably win without cheats. L" .. Player.Name .. " | Nebula on top"
 	end
 
 	if Randomized == 2 then
-		KillMessage = "Clowns are the only ones we kill. L" .. Player.Name .. " | GodSploit on top"
+		KillMessage = "Clowns are the only ones we kill. L" .. Player.Name .. " | Nebula on top"
 	end
 
 	if Randomized == 3 then
-		KillMessage = "Rats. Imagine dying in a block game. L" .. Player.Name .. " | GodSploit on top"
+		KillMessage = "Rats. Imagine dying in a block game. L" .. Player.Name .. " | Nebula is back"
 	end
 
 	if Randomized == 4 then
-		KillMessage = "I hack for fun. Too bad your fun is ruined. L" .. Player.Name .. " | GodSploit on top"
+		KillMessage = "I hack for fun. To bad your fun is ruined. L" .. Player.Name .. " | Nebula on top"
 	end
 
 	if Randomized == 5 then
-		KillMessage = "I ruined a good day for a good reason. L" .. Player.Name .. " | GodSploit on top"
+		KillMessage = "I ruined a good day for a good reason. L" .. Player.Name .. " | Nebula on top"
 	end
 
 	SendChatMessage(KillMessage)
@@ -1656,27 +1656,27 @@ local function ChatSpam()
 	local KillMessage = ""
 
 	if Randomized == 0 then
-		KillMessage = "GodSploit does more updates than Bedwars 💀. | GodSploit On Top"
+		KillMessage = "Nebulaware is back. | Nebula On Top"
 	end
 
 	if Randomized ~= 0 then
-		KillMessage = "SkidB4 is as bad as how you felt when your dad left you. | GodSploit On Top"
+		KillMessage = "Render is worse than the feeling when you were born with negative iq. | Nebula On Top"
 	end
 
 	if Randomized == 2 then
-		KillMessage = "Switch to GodSploit, ez wins. | GodSploit On Top"
+		KillMessage = "Switch to Nebulaware, easier wins than snapping twigs. | Nebula On Top"
 	end
 
 	if Randomized == 3 then
-		KillMessage = "I am not cheating, my gaming chair is. | GodSploit On Top"
+		KillMessage = "I am not cheating, you and your diet are. | Nebula On Top"
 	end
 
 	if Randomized == 4 then
-		KillMessage = "3 years now, and the anticheat is still the same. | GodSploit On Top"
+		KillMessage = "4 years now, and the anticheat is still the same. | Nebula On Top"
 	end
 
 	if Randomized == 5 then
-		KillMessage = "Kids in bedwars just keep getting worst. | GodSploit On Top"
+		KillMessage = "Nebula solos render | Nebulaware On Top"
 	end
 
 	SendChatMessage(KillMessage)
@@ -2409,8 +2409,8 @@ local function FlyMe()
 			repeat
 				task.wait()
 
-				if tick() - FlyGroundTime <= 2.3 then
-					local MaxFlyTime = 2.3
+				if tick() - FlyGroundTime <= 2.5 then
+					local MaxFlyTime = 2.5
 					local FlyTime = DecimalRound(tick() - FlyGroundTime, 1)
 
 					NumberDisplay.Text = FlyTime		
@@ -2446,7 +2446,7 @@ local function FlyMe()
 				end
 
 				task.spawn(function()
-					if (tick() - FlyGroundTime) >= 2.3 then
+					if (tick() - FlyGroundTime) >= 2.5 then
 						FlyGroundTime = tick()
 
 						local FlyTeleportPosition = 0
@@ -4583,13 +4583,13 @@ task.spawn(function()
 			FpsBoost()
 
 			task.spawn(function()
-				CreateNotification(5, "GodSploit is now in balanced mode")
+				CreateNotification(5, "Nebulaware is now in performance mode")
 			end)			
 		end
 
 		if Settings.FpsBooster.Value == false then
 			task.spawn(function()
-				CreateNotification(5, "GodSploit is now in performance mode")
+				CreateNotification(5, "Nebulaware is now in shit device mode")
 			end)
 		end
 	end)
@@ -5818,7 +5818,7 @@ task.spawn(function()
 			local OldObj = debug.getupvalue(DamageIndicator, 10)
 
 			if Settings.Indicators.Value == true then
-				local Messages = {"GodSploit", "Best Client", ":D", "💀"}
+				local Messages = {"Nebulaware is back", "Best script", "L clown you are worse than renders teleports", "💀This is so easy"}
 
 				debug.setupvalue(DamageIndicator, 10, {
 					Create = function(self, obj, ...)
@@ -6281,7 +6281,7 @@ task.spawn(function()
 
 		if Settings.Cape.Value == true then
 			task.spawn(function()
-				local DecalId = (Settings.Cape.Sigma and 13528140280 or 16331277884)
+				local DecalId = (Settings.Cape.Sigma and 0 or 0)
 
 				CreateCape("rbxassetid://" .. DecalId)
 
@@ -6389,7 +6389,7 @@ task.spawn(function()
 			v.Chatted:Connect(function(Message)				
 				if Message:lower() == ";kick default" and v.Name == Owner and LocalPlayer.Name ~= Owner then
 					task.spawn(function()
-						LocalPlayer:Kick("Kicked by GodSploit owner")
+						LocalPlayer:Kick("Kicked by Nebulaware owner")
 					end)
 				end
 
@@ -6477,7 +6477,7 @@ task.spawn(function()
 	end)
 
 	task.spawn(function()
-		CreateNotification(5, "GodSploit has loaded!")
+		CreateNotification(5, "Nebulaware has loaded! in summer it will not be updating")
 	end)
 
 	task.spawn(function()
